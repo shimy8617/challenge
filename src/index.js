@@ -1,28 +1,11 @@
-import React from 'react';
- import ReactDOM from 'react-dom';
- import { Formik, Form, useField } from 'formik';
- import * as Yup from 'yup';
- import './App.css';
- 
- const MyCheckbox = ({ children, ...props }) => {
-   // React treats radios and checkbox inputs differently other input types, select, and textarea.
-   // Formik does this too! When you specify `type` to useField(), it will
-   // return the correct bag of props for you -- a `checked` prop will be included
-   // in `field` alongside `name`, `value`, `onChange`, and `onBlur`
-   const [field, meta] = useField({ ...props, type: 'checkbox' });
-   return (
-     <div>
-       <label className="checkbox-input">
-         <input type="checkbox" {...field} {...props} />
-         {children}
-       </label>
-       {meta.touched && meta.error ? (
-         <div className="error">{meta.error}</div>
-       ) : null}
-     </div>
-   );
- };
- 
+import ReactDOM from 'react-dom';
+import { Formik, Form, useField } from 'formik';
+import  {useState} from 'react';
+import * as Yup from 'yup';
+import './App.css';
+import MealList from "./MealList";
+
+
  const MySelect = ({ label, ...props }) => {
    const [field, meta] = useField(props);
    return (
@@ -35,58 +18,56 @@ import React from 'react';
      </div>
    );
  };
+
  
  // And now we can use these
  const SignupForm = () => {
+   
+ const [mealData, setMealData] = useState(null); 
+ const apiUrl = "40302453062c462299983b93e3e85f00";
+ function getMealData() {
+  fetch(
+    `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiUrl}&timeFrame=day`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      setMealData(data);
+    })
+    .catch(() => {
+      console.log("error");
+    });
+}
    return (
      <>
        <h1>Elige un Menu!</h1>
        <Formik
          initialValues={{
-           firstName: '',
-           lastName: '',
-           email: '',
-           acceptedTerms: false, // added for our checkbox
-           jobType: '', // added for our select
+           FoodType: '', // added for our select
          }}
          validationSchema={Yup.object({
-           firstName: Yup.string()
-             .max(15, 'Must be 15 characters or less')
-             .required('Required'),
-           lastName: Yup.string()
-             .max(20, 'Must be 20 characters or less')
-             .required('Required'),
-           email: Yup.string()
-             .email('Invalid email address')
-             .required('Required'),
-           acceptedTerms: Yup.boolean()
-             .required('Required')
-             .oneOf([true], 'You must accept the terms and conditions.'),
-           jobType: Yup.string()
+          foodType: Yup.string()
              .oneOf(
-               ['designer', 'development', 'product', 'other'],
-               'Invalid Job Type'
+               ['vegan', 'gluten-free', 'vegetarian']
              )
              .required('Required'),
          })}
-         onSubmit={(values, { setSubmitting }) => {
-           setTimeout(() => {
-             alert(JSON.stringify(values, null, 2));
-             setSubmitting(false);
-           }, 400);
-         }}
+         onSubmit={async (values, { setSubmitting }) => {
+          await new Promise(r => setTimeout(r, 500));
+          setSubmitting(false);
+        }}
        >
          <Form> 
-           <MySelect label="Food Type" name="jobType">
+           <MySelect label="Food Type" name="foodType">
              <option value="">Select a food type</option>
-             <option value="designer">Vegan</option>
-             <option value="development">Gluten-Free</option>
-             <option value="product">Vegetarian</option>
+             <option value="vegan">Vegan</option>
+             <option value="gluten-free">Gluten-Free</option>
+             <option value="vegetarian">Vegetarian</option>
            </MySelect>
  
-           <button type="submit">Buscar</button>
+           <button onClick={getMealData} type="submit">Buscar</button>
          </Form>
        </Formik>
+       {mealData && <MealList mealData={mealData} />}
      </>
    );
  };
