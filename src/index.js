@@ -51,10 +51,12 @@ import MealList from "./MealList";
              )
              .required('Required'),
          })}
-         onSubmit={async (values, { setSubmitting }) => {
-          await new Promise(r => setTimeout(r, 500));
-          setSubmitting(false);
-        }}
+         onSubmit={(values, { setSubmitting }) => {
+           setTimeout(() => {
+             alert(JSON.stringify(values, null, 2));
+             setSubmitting(false);
+           }, 400);
+         }}
        >
          <Form> 
            <MySelect label="Food Type" name="foodType">

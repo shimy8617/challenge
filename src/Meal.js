@@ -25,6 +25,8 @@ export default function Meal({ meal }) {
       <ul className="instructions">
         <li>Preparation time: {meal.readyInMinutes} minutes</li>
         <li>Number of servings: {meal.servings}</li>
+        <li>Price: {meal.pricePerServing}</li>
+        <li>Diet: {meal.diets}</li>
       </ul>
 
       <a href={meal.sourceUrl}>Go to Recipe</a>
