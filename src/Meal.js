@@ -7,14 +7,16 @@ export default function Meal({ meal }) {
 
   useEffect(() => {
     fetch(
-      `https://api.spoonacular.com/recipes/queries/analyze?apiKey=${apiUrl}&includeNutrition=false&q=vegan`
+      `https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=${apiUrl}&includeNutrition=false`
     )
       .then((response) => response.json())
-      
+      .then((data) => {
+        setImageUrl(data.image);
+      })
       .catch(() => {
         console.log("error");
       });
-  });
+  }, [meal.id]);
 
   return (
     <article>
