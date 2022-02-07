@@ -24,10 +24,12 @@ import MealList from "./MealList";
  const SignupForm = () => {
    
  const [mealData, setMealData] = useState(null); 
+ const [diet, setDiet] = useState("");
  const apiUrl = "40302453062c462299983b93e3e85f00";
+
  function getMealData() {
   fetch(
-    `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiUrl}&timeFrame=day`
+    `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiUrl}&timeFrame=day&diet=${diet}`
   )
     .then((response) => response.json())
     .then((data) => {
@@ -37,6 +39,12 @@ import MealList from "./MealList";
       console.log("error");
     });
 }
+
+function handleChange(e) {
+  setDiet(e.target.value);
+  console.log(e);
+}
+
    return (
      <>
        <h1>Elige un Menu!</h1>
@@ -59,11 +67,11 @@ import MealList from "./MealList";
          }}
        >
          <Form> 
-           <MySelect label="Food Type" name="foodType">
+           <MySelect onChange={handleChange} label="Food Type" name="foodType">
              <option value="">Select a food type</option>
-             <option value="vegan">Vegan</option>
-             <option value="gluten-free">Gluten-Free</option>
-             <option value="vegetarian">Vegetarian</option>
+             <option  value="vegan">Vegan</option>
+             <option  value="gluten-free">Gluten-Free</option>
+             <option  value="vegetarian">Vegetarian</option>
            </MySelect>
  
            <button onClick={getMealData} type="submit">Buscar</button>

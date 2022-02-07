@@ -15,7 +15,6 @@ export default function MealList({ mealData }) {
           <li>Protein: {nutrients.protein.toFixed(0)}</li>
         </ul>
       </section>
-
       <section className="meals">
         {mealData.meals.map((meal) => {
           return <Meal key={meal.id} meal={meal} />;
