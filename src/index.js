@@ -6,26 +6,19 @@ import './App.css';
 import MealList from "./MealList";
 
 
-const MySelect = ({ label, ...props }) => {
-  const [field, meta] = useField(props);
-  return (
- <div>
-      <label htmlFor={props.id || props.name}>{label}</label>
-      <select {...field} {...props} />
-      {meta.touched && meta.error ? (
-     <div className="error">{meta.error}</div>
-     ) : null}
-     </div>
-   );
- };
 
  
  // And now we can use these
  const MealForm = () => {
 
-const [mealData, setMealData] = useState(null); 
-const [diet, setDiet] = useState("");
+  
 const apiUrl = "40302453062c462299983b93e3e85f00";
+
+const [mealData, setMealData] = useState(null); 
+
+const [diet, setDiet] = useState(["Vegan", 'gluten-free', 'vegetarian']);
+const Add = diet.map(Add => Add)
+const handleChange= (e) => {console.clear(); console.log((diet[e.target.value]))}
 
  function getMealData() {
   fetch(`https://api.spoonacular.com/mealplanner/generate?apiKey=${apiUrl}&timeFrame=day&diet=${diet}`)
@@ -38,10 +31,7 @@ const apiUrl = "40302453062c462299983b93e3e85f00";
     });
 }
 
-function handleChange(e) {
-  setDiet(e.target.value);
-  console.log(e);
-}
+
 
 return (
   <>
@@ -65,12 +55,11 @@ onSubmit={(values, { setSubmitting }) => {
         }}
       >
         <Form> 
-          <MySelect onChange={handleChange} label="Food Type" name="foodType">
-            <option value="">Select a food type</option>
-            <option  value="vegan">Vegan</option>
-            <option  value="gluten-free">Gluten-Free</option>
-            <option  value="vegetarian">Vegetarian</option>
-          </MySelect>
+          <select onChange={e => handleChange(e)} label="Food Type" name="foodType">
+          {
+        Add.map((address, key) => <option value={key}>{address}</option>)
+      }
+          </select>
 
           <button onClick={getMealData} type="submit">Buscar</button>
         </Form>
