@@ -1,5 +1,5 @@
 import React from "react";
-import Plate from "./Plate";
+import PlateVegan from "./PlateVegan";
 
 export default function Details({ mealData }) {
   const nutrients = mealData.nutrients;
@@ -18,7 +18,7 @@ export default function Details({ mealData }) {
 
       <section className="meals">
         {mealData.props.map((props) => {
-          return <Plate key={props.id} meal={props} />;
+          return <PlateVegan key={props.id} meal={props} />;
         })}
       </section>
     </main>

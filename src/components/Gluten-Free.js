@@ -1,6 +1,6 @@
 /* eslint-disable array-callback-return */
 import React, { useState, useEffect } from "react";
-import Plate from "./Plate";
+import PlateGluten from "./PlateGluten";
 import axios from "axios";
 import API_KEY from "../api/apiKey";
 
@@ -28,11 +28,9 @@ const GlutenFree = () => {
       {glutenFreePlates.map((plate, index) => {
         if (index === 8) {
           return (
-            <Plate
+            <PlateGluten
               key={plate.id}
               title={plate.title}
-              image={plate.image}
-              src={plate.sourceUrl}
             />
           );
         }

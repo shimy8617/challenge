@@ -1,6 +1,6 @@
 /* eslint-disable array-callback-return */
 import React, { useState, useEffect } from "react";
-import Plate from "./Plate";
+import PlateVegan from "./PlateVegan";
 import axios from "axios";
 import API_KEY from "../api/apiKey";
 
@@ -26,7 +26,7 @@ const GetInfo = () => {
     <article>
       {getInfo.map((info) => {
         return (
-          <Plate
+          <PlateVegan
             image={info.image}
             sourceUrl={info.sourceUrl}
             price={info.pricePerServing}

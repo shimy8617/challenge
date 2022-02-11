@@ -1,6 +1,7 @@
 /* eslint-disable array-callback-return */
 import React, { useState, useEffect } from "react";
-import Plate from "./Plate";
+import PlateVegan from "./PlateVegan";
+import PlateVeganB from "./PlateVegan2";
 import axios from "axios";
 import API_KEY from "../api/apiKey";
 
@@ -27,18 +28,27 @@ const VeganPlates = () => {
   return (
     <article>
       {veganPlates.map((plate, index) => {
-        if (index < 2) {
+        if (index === 9) {
           return (
-            <Plate
+            <PlateVegan
               key={plate.id}
               title={plate.title}
-              image={plate.image}
               src={plate.sourceUrl}
-              sourceUrl={plate.sourceUrl}
-              price={plate.pricePerServing}
             />
           );
         }
+        
+      })}
+      {veganPlates.map((plate, index) => {
+        if (index === 2) {
+          return (
+            <PlateVeganB
+              key={plate.id}
+              title={plate.title}
+            />
+          );
+        }
+        
       })}
     </article>
   );
