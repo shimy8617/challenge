@@ -33,14 +33,13 @@ const VeganPlates = () => {
             <PlateVegan
               key={plate.id}
               title={plate.title}
-              src={plate.sourceUrl}
             />
           );
         }
         
       })}
       {veganPlates.map((plate, index) => {
-        if (index === 2) {
+        if (index === 3) {
           return (
             <PlateVeganB
               key={plate.id}

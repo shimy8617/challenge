@@ -4,7 +4,7 @@ import API_KEY from "../api/apiKey";
 import { useState, useEffect } from "react";
 
 const PlateVeganB = (props) => {
-  let id= 1096306;
+  let id= 782601;
   const [image, setImage] = useState("");
     const [imageUrl, setImageUrl] = useState("");
   
@@ -16,7 +16,6 @@ const PlateVeganB = (props) => {
       .then((data) => {
         setImage(data.image);
         setImageUrl(data.sourceUrl);
-        console.log(data.title)
       })
       .catch(() => {
         console.log("error");

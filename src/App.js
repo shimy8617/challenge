@@ -6,9 +6,8 @@ import PageNotFound from "./components/PageNotFound";
 import "./assets/css/App.css";
 import NavBar from "./components/NavBar";
 import Vegan from "./components/Vegan";
-import GlutenFree from "./components/Gluten-Free";
+import GlutenFree from "./components/GlutenFree";
 import Ketogenic from "./components/Ketogenic";
-import GetInfo from "./components/test";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -45,7 +44,6 @@ export default class App extends React.Component {
           <Route path="/login" element={<Home />} />
           <Route path="*" element={<PageNotFound />} />
 
-          <Route path="/test" element={<GetInfo />} />
           <Route path="/Vegan" element={<Vegan />} />
           <Route path="/Gluten-Free" element={<GlutenFree />} />
           <Route path="/Ketogenic" element={<Ketogenic />} />

@@ -3,10 +3,10 @@ import "../assets/css/plates.css";
 import API_KEY from "../api/apiKey";
 import { useState, useEffect } from "react";
 
-const PlateGluten = (props) => {
+const PlateGlutenFree = (props) => {
     let id= 766453;
     const [image, setImage] = useState("");
-      const [imageUrl, setImageUrl] = useState("");
+    const [imageUrl, setImageUrl] = useState("");
     
       useEffect(() => {
         fetch(
@@ -37,4 +37,4 @@ const PlateGluten = (props) => {
       );
     };
     
-export default PlateGluten;
+export default PlateGlutenFree;

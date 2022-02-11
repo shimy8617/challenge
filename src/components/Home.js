@@ -1,11 +1,8 @@
 import React from "react";
-import { Formik, Form } from "formik";
-import * as Yup from "yup";
 import "../assets/css/home.css";
 
-import Details from "./Details";
 import Vegan from "./Vegan";
-import PlateGluten from "./PlateGluten";
+import PlateGlutenFree from "./PlateGlutenFree";
 import Ketogenic from "./Ketogenic";
 
 const Home = (meal) => {
@@ -18,7 +15,7 @@ const Home = (meal) => {
           
           <div className="diets">
             {<Vegan />}
-            {<PlateGluten />}
+            {<PlateGlutenFree />}
             {<Ketogenic />}
             <div className="tx-link">
               <a href="https://www.freepik.com/photos/frame">
