@@ -1,23 +1,15 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
-import AuthContext from "../context/AuthProvider";
-import { useContext } from "react";
+import { Link } from "react-router-dom";
 import "../assets/css/Login.css";
 
 const NavBar = () => {
-  const { setAuth } = useContext(AuthContext);
-  const navigate = useNavigate();
 
-  const logout = async () => {
-    setAuth({});
-    navigate("/login");
-  };
 
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-style">
         <div className="container-fluid">
-          <Link to="/login" className="navbar-brand">
+          <Link to="/" className="navbar-brand">
             Menu
           </Link>
           <button
@@ -68,12 +60,10 @@ const NavBar = () => {
                 </ul>
               </li>
               <li className="nav-item">
-                <button
-                  className="nav-link background-color:none"
-                  onClick={logout}
+              <Link className="logout" to="/login"
                 >
                   Sign Out
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

@@ -298,3 +298,7 @@ input[type="text"]:placeholder {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
 }
+.logout {
+  color:white;
+  margin: 7px 0 0 5px 
+}
