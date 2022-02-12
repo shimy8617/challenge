@@ -3,7 +3,7 @@
   background-size: 100%;
   color: white;
   width: 100%;
-  height: 1000px;
+  height: 900px;
 }
 .card-body h1 {
   font-family: 'Poiret One', cursive;
@@ -30,7 +30,13 @@ ul li {
   bottom: 10px;
 }
 .tools a {
-  padding: 10px;
+  margin: 10px;
+  padding: 5px;
+  background-color: white;
+  opacity: 80%;
+  color:rgb(0, 0, 0);
+  font-weight: 600;
+  border-radius: 10px;
 }
 button {
   background: none;
