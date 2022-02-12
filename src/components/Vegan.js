@@ -43,6 +43,7 @@ const VeganPlates = () => {
             <PlateVeganB
               key={plate.id}
               title={plate.title}
+              servings={plate.servings}
             />
           );
         }

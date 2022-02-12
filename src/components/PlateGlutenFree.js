@@ -8,6 +8,9 @@ const PlateGlutenFree = (props) => {
     const [image, setImage] = useState("");
     const [imageUrl, setImageUrl] = useState("");
     const [title, setTitle] = useState("");
+    const [servings, setServings] = useState("");
+    const [dishTypes, setdishTypes] = useState("");
+    const [price, setPrice] = useState("");
     
       useEffect(() => {
         fetch(
@@ -17,7 +20,10 @@ const PlateGlutenFree = (props) => {
         .then((data) => {
           setImage(data.image);
           setImageUrl(data.sourceUrl);
-          setTitle(data.title)
+          setTitle(data.title);
+          setServings(data.servings);
+          setdishTypes(data.dishTypes);
+          setPrice(data.pricePerServing);
         })
         .catch(() => {
           console.log("error");
@@ -30,6 +36,11 @@ const PlateGlutenFree = (props) => {
             <div className="tools">
               {title}
               <img src={image} alt="" />
+          <ul className = "listInfo">
+            <li>Servings: {servings}</li>
+            <li>Dish Type: {dishTypes}</li>
+            <li>Price: {price}</li>
+          </ul>
               <a href={imageUrl}>Go to Recipe</a>
               <button className="delete">X</button>
             </div>

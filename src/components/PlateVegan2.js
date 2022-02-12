@@ -7,6 +7,9 @@ const PlateVeganB = (props) => {
   let id= 782601;
   const [image, setImage] = useState("");
     const [imageUrl, setImageUrl] = useState("");
+    const [servings, setServings] = useState("");
+    const [dishTypes, setdishTypes] = useState("");
+    const [price, setPrice] = useState("");
   
     useEffect(() => {
       fetch(
@@ -16,6 +19,9 @@ const PlateVeganB = (props) => {
       .then((data) => {
         setImage(data.image);
         setImageUrl(data.sourceUrl);
+        setServings(data.servings);
+        setdishTypes(data.dishTypes);
+        setPrice(data.pricePerServing);
       })
       .catch(() => {
         console.log("error");
@@ -29,6 +35,11 @@ const PlateVeganB = (props) => {
           <div className="tools">
             {props.title}
             <img src={image} alt="" />
+            <ul className = "listInfo">
+            <li>Servings: {servings}</li>
+            <li>Dish Type: {dishTypes}</li>
+            <li>Price: {price}</li>
+          </ul>
             <a href={imageUrl}>Go to Recipe</a>
             <button className="delete">X</button>
           </div>
