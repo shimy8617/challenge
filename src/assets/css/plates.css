@@ -20,3 +20,8 @@ img {
   border-radius: 50px;
   font-size: 18px;
 }
+.listInfo {
+  font-weight: light;
+  font-size: 14px;
+  text-transform: none;
+}
