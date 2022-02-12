@@ -33,7 +33,6 @@ const PlateGlutenFree = (props) => {
       return (
         <div className="container">
           <div className="card-text">
-            <div className="tools">
               {title}
               <img src={image} alt="" />
           <ul className = "listInfo">
@@ -41,6 +40,7 @@ const PlateGlutenFree = (props) => {
             <li>Dish Type: {dishTypes}</li>
             <li>Price: {price}</li>
           </ul>
+            <div className="tools">
               <a href={imageUrl}>Go to Recipe</a>
               <button className="delete">X</button>
             </div>

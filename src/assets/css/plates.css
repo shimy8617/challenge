@@ -1,5 +1,4 @@
 .card-text {
-  padding: 20px;
   text-align: center;
   text-transform: uppercase;
   font-size: 13px;
@@ -21,7 +20,7 @@ img {
   font-size: 18px;
 }
 .listInfo {
-  font-weight: light;
   font-size: 14px;
   text-transform: none;
+  text-align: center;
 }

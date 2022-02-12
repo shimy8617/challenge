@@ -33,14 +33,15 @@ const [price, setPrice] = useState("");
     <div className="container">
       <div className="card-text">
 
-        <div className="tools">
+        
           {props.title}
           <img src={image} alt="" />
-          <ul className = "listInfo">
+          <ul className="listInfo" >
             <li>Servings: {servings}</li>
             <li>Dish Type: {dishTypes}</li>
             <li>Price: {price}</li>
           </ul>
+          <div className="tools">
           <a href={imageUrl}>Go to Recipe</a>
           <button className="delete">X</button>
         </div>
