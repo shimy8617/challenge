@@ -6,6 +6,8 @@
   height: 1000px;
 }
 .card-body h1 {
+  font-family: 'Poiret One', cursive;
+  font-size: 45px;
   position: relative;
   left: 25%;
   text-transform: uppercase;
