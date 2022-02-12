@@ -37,6 +37,7 @@ const VeganPlates = () => {
         }
         
       })}
+      <hr></hr>
       {veganPlates.map((plate, index) => {
         if (index === 3) {
           return (
