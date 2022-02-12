@@ -45,7 +45,7 @@ export default class App extends React.Component {
           <Route path="*" element={<PageNotFound />} />
 
           <Route path="/Vegan" element={<Vegan />} />
-          <Route path="/Gluten-Free" element={<GlutenFree />} />
+          <Route path="/GlutenFree" element={<GlutenFree />} />
           <Route path="/Ketogenic" element={<Ketogenic />} />
         </Routes>
       </div>
