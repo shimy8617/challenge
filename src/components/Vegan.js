@@ -16,7 +16,6 @@ const VeganPlates = () => {
         )
         .then(function (response) {
           setVeganPlates(response.data.results);
-          console.log(response.data);
         })
         .catch(function (error) {
           console.log(error.response.data);

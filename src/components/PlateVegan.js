@@ -31,7 +31,7 @@ const [image, setImage] = useState("");
           {props.title}
           <img src={image} alt="" />
           <a href={imageUrl}>Go to Recipe</a>
-          <button>Delete from Menu</button>
+          <button className="delete">X</button>
         </div>
       </div>
     </div>

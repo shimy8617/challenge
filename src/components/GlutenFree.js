@@ -15,6 +15,7 @@ const GlutenFree = () => {
           )
           .then(function (response) {
             setGlutenFreePlates(response.data.results);
+            console.log(response.data.results);
           })
           .catch(function (error) {
             console.log(error.response.data);

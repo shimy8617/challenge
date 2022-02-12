@@ -51,17 +51,12 @@ const NavBar = () => {
                 </Link>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <Link to="/PlateVegan2" className="dropdown-item">
-                      Vegan option A
+                    <Link to="/Vegan" className="dropdown-item">
+                      Vegan
                     </Link>
                   </li>
                   <li>
-                    <Link to="/PlateVegan" className="dropdown-item">
-                      Vegan option B
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/Gluten-Free" className="dropdown-item">
+                    <Link to="/GlutenFree" className="dropdown-item">
                       Gluten Free
                     </Link>
                   </li>

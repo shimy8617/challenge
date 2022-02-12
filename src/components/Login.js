@@ -17,7 +17,8 @@ export default class Login extends Component {
     };
   }
 
-  async handleClick() {
+  async handleClick(e) {
+    e.preventDefault();    
     let response = await axios.post(appConfig.urlBackend + "users", this.state);
     console.log(response);
     if (response.data.length === 1) {

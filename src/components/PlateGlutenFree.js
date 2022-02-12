@@ -7,6 +7,7 @@ const PlateGlutenFree = (props) => {
     let id= 766453;
     const [image, setImage] = useState("");
     const [imageUrl, setImageUrl] = useState("");
+    const [title, setTitle] = useState("");
     
       useEffect(() => {
         fetch(
@@ -16,6 +17,7 @@ const PlateGlutenFree = (props) => {
         .then((data) => {
           setImage(data.image);
           setImageUrl(data.sourceUrl);
+          setTitle(data.title)
         })
         .catch(() => {
           console.log("error");
@@ -25,12 +27,11 @@ const PlateGlutenFree = (props) => {
       return (
         <div className="container">
           <div className="card-text">
-    
             <div className="tools">
-              {props.title}
+              {title}
               <img src={image} alt="" />
               <a href={imageUrl}>Go to Recipe</a>
-              <button>Delete from Menu</button>
+              <button className="delete">X</button>
             </div>
           </div>
         </div>
