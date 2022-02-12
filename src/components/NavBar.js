@@ -60,7 +60,7 @@ const NavBar = () => {
                 </ul>
               </li>
               <li className="nav-item">
-              <Link className="logout" to="/login"
+              <Link to="/login" className="logout"
                 >
                   Sign Out
                 </Link>

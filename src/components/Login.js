@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../assets/css/Login.css";
 import axios from "axios";
 import appConfig from "../appConfig";
-import NavBar from "./NavBar";
 
 export default class Login extends Component {
   constructor(props) {
@@ -43,7 +42,6 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <NavBar />
         <div className="wrapper fadeInDown">
           <div id="formContent">
             <form>
