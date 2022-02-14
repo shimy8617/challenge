@@ -5,3 +5,21 @@
   grid-template-rows: 220px 220px;
 }
 
+@media only screen and (max-width: 1450px) {
+  .container {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 150px 150px;
+}
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 150px 150px;
+}
+}
+
