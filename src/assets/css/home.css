@@ -9,7 +9,7 @@
   font-size: 45px;
   padding: 20px;
   position: relative;
-  left: 25%;
+  text-align: center;
   text-transform: uppercase;
   font-weight: bolder;
 }
@@ -21,7 +21,7 @@ ul li {
 .diets {
   width: 100%;
   display: grid;
-  grid-template-columns: 400px 400px 400px;
+  grid-template-columns: 33% 33% 33%;
   grid-template-rows: 200px 200px;
 }
 
