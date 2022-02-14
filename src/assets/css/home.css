@@ -1,7 +1,6 @@
 .card {
-  background: url("../images/vegetables-set-left-black-slate.jpg");
-  background-size: 125%;
-  color: white;
+  background-color:rgb(240, 240, 240);
+  color: rgb(3, 3, 3);
   width: 100%;
   height: 1100px;
 }
