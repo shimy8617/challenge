@@ -40,8 +40,9 @@ ul li {
   border-radius: 10px;
 }
 .tools a:hover {
-  background-color: rgb(0, 0, 0);
-  color:rgb(255, 255, 255)
+  background-color: rgb(255, 251, 28);
+  color: black;
+  font-size: 14px;
 }
 button {
   background: none;
