@@ -36,7 +36,7 @@ const PlateVegan = (props) => {
   return (
     <div className="container">
       <div className="card-text">
-        {props.title}
+        <div className="titleMeal">{props.title}</div>
         <img src={image} alt="" />
         <ul className="listInfo">
           <li>Servings: {servings}</li>
