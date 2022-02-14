@@ -48,3 +48,16 @@ button {
   background: none;
   color: #ffffff;
 }
+
+
+@media only screen and (max-width: 1450px) {
+  .tools a:hover {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .tools a:hover {
+    font-size: 11px;
+  }
+}
