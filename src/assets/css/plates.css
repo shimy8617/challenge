@@ -4,6 +4,9 @@
   font-size: 13px;
   font-weight: bold;
 }
+.titleMeal{
+  text-decoration: underline;
+}
 img {
   width: 360px;
   height: 260px;
