@@ -37,7 +37,7 @@ const PlateGlutenFree = (props) => {
   return (
     <div className="container">
       <div className="card-text">
-        {title}
+        <div className="titleMeal">{title}</div>
         <img src={image} alt="" />
         <ul className="listInfo">
           <li>Servings: {servings}</li>
